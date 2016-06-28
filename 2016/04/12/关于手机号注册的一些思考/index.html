@@ -1,0 +1,618 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="手机号注册的潮流经过对40个国内外互联网产品的观察统计，我发现了中国产品的一个有趣现象，就是全体偏重手机注册，而且越大的产品越是这样。相比之下，美国网站注册登录的主流是邮箱/第三方登录，手机能不用到就不用。
+最典型的例子是LinkedIn和赤兔。同为一个公司的职场社交软件，一个是国际版，一个是中国版，国际版的LinkedIn的唯一注册方式就是邮箱注册；而赤兔的唯一注册方式是手机注册。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于手机号注册的一些思考">
+<meta property="og:url" content="http://yoursite.com/2016/04/12/关于手机号注册的一些思考/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="手机号注册的潮流经过对40个国内外互联网产品的观察统计，我发现了中国产品的一个有趣现象，就是全体偏重手机注册，而且越大的产品越是这样。相比之下，美国网站注册登录的主流是邮箱/第三方登录，手机能不用到就不用。
+最典型的例子是LinkedIn和赤兔。同为一个公司的职场社交软件，一个是国际版，一个是中国版，国际版的LinkedIn的唯一注册方式就是邮箱注册；而赤兔的唯一注册方式是手机注册。">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1315847-ff618410fe910cb5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://o6qjyk8rv.bkt.clouddn.com/%E6%89%BE%E5%9B%9E%E5%AF%86%E7%A0%81%E6%B5%81%E7%A8%8B.jpg">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1315847-6379b478fc3d21b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-06-28T16:48:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于手机号注册的一些思考">
+<meta name="twitter:description" content="手机号注册的潮流经过对40个国内外互联网产品的观察统计，我发现了中国产品的一个有趣现象，就是全体偏重手机注册，而且越大的产品越是这样。相比之下，美国网站注册登录的主流是邮箱/第三方登录，手机能不用到就不用。
+最典型的例子是LinkedIn和赤兔。同为一个公司的职场社交软件，一个是国际版，一个是中国版，国际版的LinkedIn的唯一注册方式就是邮箱注册；而赤兔的唯一注册方式是手机注册。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1315847-ff618410fe910cb5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/04/12/关于手机号注册的一些思考/"/>
+
+  <title> 关于手机号注册的一些思考 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                关于手机号注册的一些思考
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-04-12T01:39:00+08:00" content="2016-04-12">
+              2016-04-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="手机号注册的潮流"><a href="#手机号注册的潮流" class="headerlink" title="手机号注册的潮流"></a>手机号注册的潮流</h3><p>经过对40个国内外互联网产品的观察统计，我发现了中国产品的一个有趣现象，就是全体偏重手机注册，而且越大的产品越是这样。相比之下，美国网站注册登录的主流是邮箱/第三方登录，手机能不用到就不用。</p>
+<p>最典型的例子是LinkedIn和赤兔。同为一个公司的职场社交软件，一个是国际版，一个是中国版，国际版的LinkedIn的唯一注册方式就是邮箱注册；而赤兔的唯一注册方式是手机注册。</p>
+<a id="more"></a>
+<p><img src="http://upload-images.jianshu.io/upload_images/1315847-ff618410fe910cb5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="LinkedIn和赤兔的注册页面"></p>
+<p>此外，中国的互联网巨头，虽然在其发展早期的注册方式是八仙过海各显神通，比如QQ，早期的注册什么都不需要，注册成功后用户会得到一个独有的ID，作为以后的登录账号，但是到了今天再去看，手机注册也成了QQ唯一的方式。不仅如此，大多数我们能想到的大厂，无一例外地都推崇了手机注册这种方式，这当然也带动了整个行业的风潮。</p>
+<h3 id="手机注册的优势"><a href="#手机注册的优势" class="headerlink" title="手机注册的优势"></a>手机注册的优势</h3><p>作为一个潮流，手机注册必然有它的优势，使无数互联网企业趋之若鹜。比如说：</p>
+<p><strong>1. 中国手机保有量大</strong></p>
+<p>这个保有量是相对于邮箱而言的。由于国内外科技发展的进程不一，美国人的邮箱文化广泛而渗透。相比之下，中国人的通讯更加倚赖手机而非邮箱。因此手机注册能涵盖更多的市场人群。</p>
+<p><strong>2. 手机号好记</strong></p>
+<p>用户可能记不住邮箱账号，但一定不会忘记自己的手机号。</p>
+<p><strong>3. 用户ID唯一</strong></p>
+<p>有利于获得真实的用户。</p>
+<p><strong>4. 便于移动验证</strong></p>
+<p>移动产品下，所有要用户进行邮箱验证的操作，都是反人类的。而手机验证能够较好的平衡“验证“和”移动“这两个需求。</p>
+<p><strong>5. 安全性</strong></p>
+<p>例如：“忘记密码时，您可以通过手机验证码快速取回密码；而密码一旦被盗号者更改，您也可以收到免费短信通知。”</p>
+<p><strong>6. 便于联系</strong></p>
+<p>尤其是对于电商、O2O类的产品，使用过程中必然涉及到手机号绑定。与其让用户注册后再在使用过程中绑定，不如在注册时直接采用手机注册的方式。</p>
+<p><strong>7. 易于导入社交链</strong></p>
+<p>社交类的应用可以通过导入通讯录，迅速将用户的真实社交链引入到产品中。</p>
+<h3 id="手机注册的劣势"><a href="#手机注册的劣势" class="headerlink" title="手机注册的劣势"></a>手机注册的劣势</h3><p>没有什么机制是完美的，手机注册也是。目前来说，手机注册面临着以下挑战：</p>
+<p><strong>1. 用户注册的心理门槛</strong></p>
+<p>手机是比邮箱更加personal的东西，出于隐私泄露、防骚扰等方面的考虑，用户往往不肯轻易地在不信任的产品上输入手机号。</p>
+<p><strong>2. 企业成本</strong></p>
+<p>手机验证短信5分钱一条。</p>
+<p><strong>3. 安全风险</strong></p>
+<p>刚才说到，手机注册的优点是“安全性”，不过这是建立在“一机在手，天下我有”的前提下。一旦用户的手机丢失，或是弃用旧号码，那么仍被该号码绑定的产品就面临着很大的风险。这几年最著名的案例便是层出不穷的支付宝盗号事件。</p>
+<p><strong>4. 被二次放号的用户无法注册新账户</strong></p>
+<p>如果一个手机号注册了某应用账户，后来被运营商回收，并被二次放号给下一个客户。那么新客户就无法使用该手机号来注册此应用。</p>
+<h3 id="对于劣势的解决方法"><a href="#对于劣势的解决方法" class="headerlink" title="对于劣势的解决方法"></a>对于劣势的解决方法</h3><h4 id="1-解决：用户注册的心理门槛"><a href="#1-解决：用户注册的心理门槛" class="headerlink" title="1. 解决：用户注册的心理门槛"></a>1. 解决：用户注册的心理门槛</h4><ul>
+<li><strong>权衡手机注册的必要性</strong></li>
+</ul>
+<p>从刚才提到的手机注册的优点来分析，有几大类产品是必须使用手机注册的：<strong>电商类</strong>（便于联系），<strong>O2O类</strong>（便于联系），<strong>支付类</strong>（安全性），<strong>目标用户不爱用邮箱类</strong>（手机保有量大）</p>
+<p>也有可以通过手机注册来加特技的的：<strong>真实社交类</strong>（导入社交链）.</p>
+<p>或是纯属来搞笑的：工具类，资讯类，匿名社交类……</p>
+<p>作为一个产品，应该首先衡量手机注册给自己带来的优劣，若是没有强烈的动机，就要慎用手机注册。至少，不能将手机作为唯一的注册方式。</p>
+<ul>
+<li><strong>提高用户对产品的信任度</strong></li>
+</ul>
+<p>在用户对产品、对公司都缺乏信任度的时候，提供多种注册方式。第一阶段以扩大市场覆盖面为主要目标。等到用户积累足够，且市场上对这款产品的信任度有所提升，再进行收紧，转为唯一的手机注册方式。</p>
+<ul>
+<li><strong>先体验，后注册</strong></li>
+</ul>
+<p>如果在上述条件都不能满足的条件下，还执意要使用手机注册作为唯一的方式。那么一定要先让用户体验产品，再提示其注册。先注册后体验的方式，只会从一开始就把用户挡在门外。</p>
+<h4 id="2-解决：安全风险"><a href="#2-解决：安全风险" class="headerlink" title="2. 解决：安全风险"></a>2. 解决：安全风险</h4><p>安全风险是支付类产品尤其需要考虑的问题。拿支付宝来说，一旦手机号落入他人手里（哪怕是时隔几个月的二次放号），他人就有机会对支付宝进行密码修改等操作，从而窃取账内资金。</p>
+<p>这个风险的来源在于，支付宝将手机号作为修改密码的唯一验证程序。所以，解决的方法应该是，增加几道验证程序。</p>
+<p>在早些年，互联网产品流行“安全问题”的验证方式，比如在注册时让你回答：你童年最好的朋友是谁？你最喜欢的颜色是什么？</p>
+<p>这种验证方式，相较于要求用户大费周章地拍一张自己和身份证的合影，显然更加直接有效。但弊端是，安全问题的答案往往用户本人也不一定记得住。</p>
+<p>更为合理的验证点是：手机号 + 设备 + 操作记录核验/真实身份验证</p>
+<p><img src="http://o6qjyk8rv.bkt.clouddn.com/%E6%89%BE%E5%9B%9E%E5%AF%86%E7%A0%81%E6%B5%81%E7%A8%8B.jpg" alt="支付产品找回密码流程"></p>
+<p><strong>操作记录核验</strong>，即请用户判断系统给出的选项中哪几项符合自己的操作记录。例如给出九张商品图片，请用户选出其中自己使用支付宝所购买过的三样商品。那么一个真用户可以轻松的判断出哪三样商品，而伪用户瞎蒙正确的概率仅为1.119%。只要再多猜一组，正确率就会下降到0.1%。当然，这只是举个例子。实际上，这个例子不太靠谱，因为拿到手机的人打开手机淘宝就知道答案了。实际核验的项目可以根据产品特性、甚至每个用户的使用习惯来决定。（例如，你的支付宝绑定了什么银行卡？请选出近一年与你有转账来往的联系人。）</p>
+<p>说回到验证流程。</p>
+<p>使用新验证方式后的场景是这样的：若用户输入正确的账号和密码，则登录成功。</p>
+<p>若用户忘记密码而选择了“找回密码”的操作：</p>
+<p>第一步，系统自动进行判断是否为常用操作设备的。若用户的设备正确，那么再进行一次操作记录核验，通过后即可进入到修改密码流程。这条线相当于通过增加“操作记录核验”的门槛来区分真用户和持有手机的小偷。</p>
+<p>若用户的设备不是常用设备（任何登录达到一定次数的手机或电脑），建议用户更换为常用设备后进行操作，否则将进入真实身份验证流程（上传本人与身份证的合影）。身份验证可能面临着两种情况，一是用户的账号已实名认证，二是用户还未进行实名认证。第一种情况下，通过用户新照片与老照片的比较，可以得出准确的判断结果。第二种情况下，则鼓励用户进行身份绑定后再进行密码修改。这样的好处是，若为真用户，身份绑定将增加其日后的账号安全性，若为伪用户，伪用户不会贸然进行真实身份的绑定，否则这正是给真用户报案提供了绝佳的追踪信息。</p>
+<h4 id="3-解决：被二次放号的用户无法注册新账户"><a href="#3-解决：被二次放号的用户无法注册新账户" class="headerlink" title="3. 解决：被二次放号的用户无法注册新账户"></a>3. 解决：被二次放号的用户无法注册新账户</h4><p>对于这个问题，微信是这样解决的：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1315847-6379b478fc3d21b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新购买的手机号提示已被注册"></p>
+<p>如果用户使用新购买的手机号注册微信，却发现这个手机号已经被前主人注册过了，那么在用户的操作下微信将自动解绑此手机号，使该手机号可以重新注册。</p>
+<p>可是问题来了，目前微信的注册方式只有手机注册一种。如果一个用户与微信只有手机号的绑定关系，而且注销该手机号之后，该用户仍然继续正常使用这个微信号（运营商二次放号前的冷冻期仅为三个月），那么微信的解绑不会造成问题吗？</p>
+<p>这个做法，我还没有想明白，希望路过的朋友们可以一起讨论讨论。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/11/产品轻了，市场细了/" rel="next" title="产品轻了，市场细了">
+                <i class="fa fa-chevron-left"></i> 产品轻了，市场细了
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/18/罗伯特议事规则的12条基本原则/" rel="prev" title="罗伯特议事规则的12条基本原则">
+                罗伯特议事规则的12条基本原则 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#手机号注册的潮流"><span class="nav-number">1.</span> <span class="nav-text">手机号注册的潮流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手机注册的优势"><span class="nav-number">2.</span> <span class="nav-text">手机注册的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手机注册的劣势"><span class="nav-number">3.</span> <span class="nav-text">手机注册的劣势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对于劣势的解决方法"><span class="nav-number">4.</span> <span class="nav-text">对于劣势的解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-解决：用户注册的心理门槛"><span class="nav-number">4.1.</span> <span class="nav-text">1. 解决：用户注册的心理门槛</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-解决：安全风险"><span class="nav-number">4.2.</span> <span class="nav-text">2. 解决：安全风险</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-解决：被二次放号的用户无法注册新账户"><span class="nav-number">4.3.</span> <span class="nav-text">3. 解决：被二次放号的用户无法注册新账户</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
