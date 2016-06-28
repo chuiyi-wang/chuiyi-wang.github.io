@@ -1,0 +1,706 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="作为一个非计算机专业的学生，第一次在知乎上知道wordpress这个神器的时候简直惊喜，当即照着前辈们的教程着手建立我的个人网站（http://chuiyi.wang）。但是一路跟下来，我发现这些教程并不足够满足我的需求：**便宜、简单、快捷**。所以特开此帖，给像我一样想要快速建立个人网站的非计算机系学生党。目前为止，除了注册域名必须花的18元，尚无其他支出。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="只要一小时，谁都能轻松建立个人网站">
+<meta property="og:url" content="http://yoursite.com/2016/03/20/只要一小时，谁都能轻松建立个人网站/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="作为一个非计算机专业的学生，第一次在知乎上知道wordpress这个神器的时候简直惊喜，当即照着前辈们的教程着手建立我的个人网站（http://chuiyi.wang）。但是一路跟下来，我发现这些教程并不足够满足我的需求：**便宜、简单、快捷**。所以特开此帖，给像我一样想要快速建立个人网站的非计算机系学生党。目前为止，除了注册域名必须花的18元，尚无其他支出。">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/7f5ed6eajw1f237288jzkj20ya0c0mym.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/7f5ed6eajw1f2372a5ifrj20jz0gx410.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/7f5ed6eajw1f2372c85c7j20yg0gp0vx.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/7f5ed6eajw1f2372e4mknj20qk0io76m.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/7f5ed6eajw1f2372gd8bfj20yg0iqn0z.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/7f5ed6eajw1f2372pzbfpj20yg0h0gux.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/7f5ed6eajw1f2372s59vkj20az07i74o.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/7f5ed6eajw1f2372vv1yuj20tb0imacm.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/7f5ed6eajw1f2372y5io7j209g034glm.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/7f5ed6eajw1f23730rxnsj20fj0e0aca.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/7f5ed6eajw1f23732z82yj20fe06laak.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/7f5ed6eajw1f23735kuzxj20tf088q4u.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/7f5ed6eajw1f23737fepoj20gu0d1taj.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/7f5ed6eajw1f2373h1z6hj20yg0eawhu.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/7f5ed6eajw1f2373liudvj20tp03q74r.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/7f5ed6eajw1f2373pkrruj20o409dwg0.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/7f5ed6eajw1f2373rk5frj20ke0bdt96.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/7f5ed6eajw1f2373sv3igj20jj0810tm.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/7f5ed6eajw1f2373v8ol7j20kc0bfwfs.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/7f5ed6eajw1f2373xyjccj20ty0l0q5l.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/7f5ed6eajw1f23743z9wej20yg0g97eg.jpg">
+<meta property="og:updated_time" content="2016-06-28T17:38:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="只要一小时，谁都能轻松建立个人网站">
+<meta name="twitter:description" content="作为一个非计算机专业的学生，第一次在知乎上知道wordpress这个神器的时候简直惊喜，当即照着前辈们的教程着手建立我的个人网站（http://chuiyi.wang）。但是一路跟下来，我发现这些教程并不足够满足我的需求：**便宜、简单、快捷**。所以特开此帖，给像我一样想要快速建立个人网站的非计算机系学生党。目前为止，除了注册域名必须花的18元，尚无其他支出。">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/7f5ed6eajw1f237288jzkj20ya0c0mym.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/03/20/只要一小时，谁都能轻松建立个人网站/"/>
+
+  <title> 只要一小时，谁都能轻松建立个人网站 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                只要一小时，谁都能轻松建立个人网站
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-20T11:36:00+08:00" content="2016-03-20">
+              2016-03-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>作为一个非计算机专业的学生，第一次在知乎上知道wordpress这个神器的时候简直惊喜，当即照着前辈们的教程着手建立我的个人网站（<a href="http://chuiyi.wang）。但是一路跟下来，我发现这些教程并不足够满足我的需求：**便宜、简单、快捷**。所以特开此帖，给像我一样想要快速建立个人网站的非计算机系学生党。目前为止，除了注册域名必须花的18元，尚无其他支出。" target="_blank" rel="external">http://chuiyi.wang）。但是一路跟下来，我发现这些教程并不足够满足我的需求：**便宜、简单、快捷**。所以特开此帖，给像我一样想要快速建立个人网站的非计算机系学生党。目前为止，除了注册域名必须花的18元，尚无其他支出。</a></p>
+<a id="more"></a>
+<p>一般的教程主要步骤如下：</p>
+<blockquote>
+<ol>
+<li><p>注册域名</p>
+</li>
+<li><p>注册虚拟空间</p>
+</li>
+<li><p>下载并安装wordpress</p>
+</li>
+<li><p>建立数据库</p>
+</li>
+<li><p>解析域名</p>
+</li>
+<li><p>安装模板和插件</p>
+</li>
+</ol>
+</blockquote>
+<p>今天我要告诉大家另一样神器：新浪云。它可以帮助我们轻松搞定2、3、4个步骤。</p>
+<p>所以这个教程的主要步骤如下：</p>
+<blockquote>
+<ol>
+<li><p>注册域名</p>
+</li>
+<li><p>注册和使用新浪云</p>
+</li>
+<li><p>解析域名</p>
+</li>
+<li><p>安装模板和插件</p>
+</li>
+</ol>
+</blockquote>
+<p><strong>1. 注册域名</strong></p>
+<p>国内外的域名注册商都是可以选择的，我个人使用的是：</p>
+<p><a href="http://wanwang.aliyun.com/domain/" target="_blank" rel="external">阿里云域名注册</a></p>
+<p>注册方法很简单，搜索并筛选未被注册的域名，然后付款就行。一个普通的域名的价格一般是第一年40、50元，也有的域名比较便宜，像我注册的就是第一年18元。</p>
+<p><strong>2. 新浪云</strong></p>
+<p>在使用新浪云之前，为了注册虚拟空间，我在阿里做活动时申请了一年的免费虚拟空间，申请国内的主机空间比较麻烦的一点，就是要备案。备案过程特费时，一来一回了好几天，在此按下不表。新浪云好的一点就是目前对个人开发者并没有备案要求。</p>
+<p>关于虚拟空间，另一个要考虑的因素是，一年后阿里云就会开始收费，不管你的PV（page view）是zero还是爆表，都要固定缴费。而新浪云使用的是“按需收豆”的收费方式。1元 = 100云豆，云豆可以用来购买新浪云的各种服务，包含新浪云应用 SAE、云主机 SEC、云存储 SCS、云容器 SC2、云商店 SCM、云邮箱 SEM。对于一个个人网站上来说，一两百颗云豆妥妥够用了。</p>
+<p>为了建立数据库，我曾经使用过XAMPP，一个挺大的软件。但实际上如果你没有其他用途的话，下载这样一个软件就是杀鸡偏用牛刀了。而新浪云可以让我们不用操心数据库的问题。</p>
+<p>那么现在开始使用新浪云创建wordpress。</p>
+<p>首先，你需要注册新浪云：</p>
+<p><a href="http://t.cn/RGHkgss" target="_blank" rel="external">新浪云注册</a></p>
+<p>新浪云目前的活动是，通过邀请注册新浪云的，被邀请人和邀请人各得200颗云豆。所以上面那条是我的邀请链接，请收下！</p>
+<p>然后，进入云应用控制台。</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/7f5ed6eajw1f237288jzkj20ya0c0mym.jpg" alt="请输入图片描述"></p>
+<p>点击“创建新应用”。</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/7f5ed6eajw1f2372a5ifrj20jz0gx410.jpg" alt="请输入图片描述"></p>
+<p>输入一个二级域名。如果你有自己的域名，这里可以随便填，以后我们会把网站改成独立域名。</p>
+<p>填入应用名称，选择“WordPress for SAE&quot;</p>
+<p>然后等待系统进行安装：</p>
+<p><img src="http://ww2.sinaimg.cn/mw690/7f5ed6eajw1f2372c85c7j20yg0gp0vx.jpg" alt="请输入图片描述"></p>
+<p>安装好以后会进入这个著名的WordPress的5分钟安装页面：</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/7f5ed6eajw1f2372e4mknj20qk0io76m.jpg" alt="请输入图片描述"></p>
+<p>填好要求信息提交之后，wordpress会一脸贱兮兮地告诉你：是不是还沉浸在安装的喜悦当中呀？可是你已经安装好了哦！</p>
+<p>现在你返回控制台，就可以看到刚刚创建好的wordpress应用了。（我由于个人手贱，先后创建了两个，在下个步骤中会解释怎么手贱的）。</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/7f5ed6eajw1f2372gd8bfj20yg0iqn0z.jpg" alt="请输入图片描述"></p>
+<p>现在已经可以用这串二级域名来访问你的初始主页了。</p>
+<p><img src="http://ww3.sinaimg.cn/mw690/7f5ed6eajw1f2372pzbfpj20yg0h0gux.jpg" alt="请输入图片描述"></p>
+<p>在页面上登录状态下可以进入”仪表盘“进行网站后台编辑：</p>
+<p><img src="http://ww2.sinaimg.cn/mw690/7f5ed6eajw1f2372s59vkj20az07i74o.jpg" alt="请输入图片描述"></p>
+<p><strong>3. 解析域名</strong></p>
+<p>解析域名的意思就是，这个让域名和网站勾搭起来。</p>
+<p>我们回到新浪云控制台，找到刚刚创建的应用，点进来会看到这个应用管理的界面：</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/7f5ed6eajw1f2372vv1yuj20tb0imacm.jpg" alt="请输入图片描述"></p>
+<p>点击域名管理：</p>
+<p><img src="http://ww2.sinaimg.cn/mw690/7f5ed6eajw1f2372y5io7j209g034glm.jpg" alt="请输入图片描述"></p>
+<p>在下框中输入注册好的独立域名：</p>
+<p><img src="http://ww2.sinaimg.cn/mw690/7f5ed6eajw1f23730rxnsj20fj0e0aca.jpg" alt="请输入图片描述"></p>
+<p>点击绑定。之后系统会弹出这个提示框：</p>
+<p><img src="http://ww4.sinaimg.cn/mw690/7f5ed6eajw1f23732z82yj20fe06laak.jpg" alt="请输入图片描述"></p>
+<p>这个信息不用特地记，我们返回域名管理还会看到：</p>
+<p><img src="http://ww4.sinaimg.cn/mw690/7f5ed6eajw1f23735kuzxj20tf088q4u.jpg" alt="请输入图片描述"></p>
+<p>那么怎么进行CNAME，怎么进行A解析呢？</p>
+<p>这时候我们就需要回到我们注册域名的地方。我以阿里云域名注册为例。</p>
+<p>首先，进入阿里云的管理控制台，找到你的域名：</p>
+<p><img src="http://ww2.sinaimg.cn/mw690/7f5ed6eajw1f23737fepoj20gu0d1taj.jpg" alt="请输入图片描述"></p>
+<p>点击域名，找到它的解析设置：</p>
+<p><img src="http://ww2.sinaimg.cn/mw690/7f5ed6eajw1f2373h1z6hj20yg0eawhu.jpg" alt="请输入图片描述"></p>
+<p>点击“添加解析”，即上图中的红色按钮。按照新浪云给的方式添加那两条解析。</p>
+<p>等上几分钟，等到“是否生效”和“是否验证”都显示了“是”，就算解析完成了。这时在浏览器中输入你的独立域名，就可以链接到网站了。</p>
+<p><img src="http://ww4.sinaimg.cn/mw690/7f5ed6eajw1f2373liudvj20tp03q74r.jpg" alt="请输入图片描述"></p>
+<hr>
+<p>update: 根据几位读者的反馈，在这里补充几条tips。</p>
+<ol>
+<li><p>新浪云提供的CNAME和A解析地址由英文和数字组成（一定不是乱码），如果出现乱码请换个浏览器试试。</p>
+</li>
+<li><p>CNAME主机记录那里填&quot;chuiyi.wang&quot;（你的独立域名）或&quot;@&quot;的意思都是一样的。</p>
+</li>
+<li><p>新浪云提供的A解析地址要复制全。有朋友看到我的阿里云A解析记录里的“主机记录”没有后面那串“.chuiyi.wang”，就跟着只复制前一半了。其实我是复制全了的，只是阿里云没有显示。</p>
+</li>
+<li><p>如果你发现虽然新浪云显示了“步骤进行到 是否验证：是 是否生效： 是”，但却无法通过独立域名打开网站。请检查一下阿里云解析记录里是否还有其他解析内容，有的话就删掉，只留新浪云要求解析的那两条，然后等几分钟看看。</p>
+</li>
+</ol>
+<hr>
+<p>但还有个问题，就是虽然输入个人域名可以进入到个人网站了，可是在网站里跳转一下，浏览器上方又变成了新浪给的二级域名。</p>
+<p>这个问题很好办。回到个人网站的仪表盘，点击设置：</p>
+<p><img src="http://ww4.sinaimg.cn/mw690/7f5ed6eajw1f2373pkrruj20o409dwg0.jpg" alt="请输入图片描述"></p>
+<p>将URL填写为你的个人域名，保存后重新登录即可。</p>
+<p>特别提醒好奇宝宝们：</p>
+<p>千万不要填入其他网站的URL！</p>
+<p>否则就再也找不到你自己的网站了……</p>
+<p>对，这就是为什么我又重新建了第二个wordpress应用……</p>
+<p><strong>4. 安装模板和插件</strong></p>
+<p>到第三步为止，如果你对系统自带的网站主题可以接受，那个人建站就算完成了。如果你对网站主题有更高的追求，请往下看。</p>
+<p>新浪云建站的缺陷是，无法在线选择wordpress主题和插件（其实在线模板种类也有限），所以如果想安装样式丰富的模板，我们需要另一样神器：SVN。</p>
+<p>之前用阿里云虚拟空间的时候，不论是安装wordpress还是上传开源模板，方法都是ftp。ftp在windows上的操作比较简单，用本地文件夹就可以操作。OS系统本身对ftp没有支持，所以我用了一款广受推荐的叫FileZilla的免费软件。文件的上传速度极慢，忍无可忍的我又去尝试了其他ftp免费软件，发现都一样龟速。</p>
+<p>所以现在初尝甜头的我一定要向各位安利新浪云+SVN的方式！</p>
+<p>SVN一般来说是开发团队用以进行版本控制的工具。而在这个案例中，我们主要使用SVN来控制云端代码。</p>
+<p>首先，我们需要下载一个SVN客户端。</p>
+<p><strong>Windows的用户</strong>请参考这一篇SAE的代码部署手册：（直接拖到“使用SVN客户端”）</p>
+<p><a href="http://www.sinacloud.com/doc/sae/tutorial/code-deploy.html#id2" target="_blank" rel="external">SAE的代码部署手册</a></p>
+<p><strong>Mac用户</strong>可以下载<strong>SmartSVN</strong>:</p>
+<p><a href="http://www.smartsvn.com/download" target="_blank" rel="external">下载SmartSVN</a></p>
+<p>SmartSVN一开始有30天的专业版试用期，到期会自动退为普通版。没关系，够用的。</p>
+<p>说到SVN，几个名词稍微解释一下。</p>
+<blockquote>
+<p>Repository（源代码库）－源代码统一存放的地方；</p>
+<p>Checkout （提取）－当你手上没有源代码的时候，你需要从repository checkout一份；</p>
+<p>Directories - 本地存储代码的地方</p>
+<p>Commit （提交）－当你已经修改了代码，你就需要Commit到repository；</p>
+<p>Update (更新)－当你已经Checkout了一份源代码，</p>
+<p>Update一下你就可以和Repository上的源代码同步，你手上的代码就会有最新的变更。</p>
+</blockquote>
+<p>简单来说，我们现在需要从新浪云（Repository）提取（Checkout）网站的源代码，放到本地（Directories），然后在本地进行代码修改（或者添加主题、插件文件），再将本地的文件提交（Commit）到新浪云。</p>
+<p>所以打开SmartSVN后，我们就跟着软件引导进行Checkout.</p>
+<p>第一步是输入源代码库的地址：</p>
+<p><img src="http://ww4.sinaimg.cn/mw690/7f5ed6eajw1f2373rk5frj20ke0bdt96.jpg" alt="请输入图片描述"></p>
+<p>这个地址可以在新浪云应用管理中的代码管理里找到：</p>
+<p><img src="http://ww4.sinaimg.cn/mw690/7f5ed6eajw1f2373sv3igj20jj0810tm.jpg" alt="请输入图片描述"></p>
+<p>然后输入本地存放代码的位置：</p>
+<p><img src="http://ww4.sinaimg.cn/mw690/7f5ed6eajw1f2373v8ol7j20kc0bfwfs.jpg" alt="请输入图片描述"></p>
+<p>接着一路Continue……你会看到左下角正在Checkout：</p>
+<p><img src="http://ww3.sinaimg.cn/mw690/7f5ed6eajw1f2373xyjccj20ty0l0q5l.jpg" alt="请输入图片描述"></p>
+<p>完成之后，云端的文件就会出现在你的本地文件夹里了。</p>
+<p>在本地文件夹里，可以找到wp-content这个文件夹，点开之后里面有叫做theme和plugins的文件夹，分别用来存放wordpress的主题和插件。接下来我们需要做的，就是在网络上下载心仪的主题和插件，然后放到theme或plugins文件夹里。</p>
+<p>放好之后，需要把本地的代码传到云端。只需要打开SmartSVN，在左上角的Directories中找到你刚刚放进去的主题文件夹，进行Commit操作即可。</p>
+<p>Commit成功后，回到wordpress仪表盘的“外观”管理中，你会发现可用主题除了最初默认那2个外，还加入了你刚放进去的主题。</p>
+<p><img src="http://ww3.sinaimg.cn/mw690/7f5ed6eajw1f23743z9wej20yg0g97eg.jpg" alt="请输入图片描述"></p>
+<p>用这个方法，你就可以玩遍所有开源的wordpress主题和插件了，想什么风格是什么风格~</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/19/人的一生在追求什么/" rel="next" title="人的一生在追求什么">
+                <i class="fa fa-chevron-left"></i> 人的一生在追求什么
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/26/书摘：周鸿祎的《我的互联网方法论》/" rel="prev" title="书摘：周鸿祎的《我的互联网方法论》">
+                书摘：周鸿祎的《我的互联网方法论》 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
