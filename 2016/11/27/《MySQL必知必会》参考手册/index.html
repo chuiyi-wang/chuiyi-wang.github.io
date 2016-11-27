@@ -1,0 +1,755 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="MySQL,数据分析," />
+
+
+
+
+
+  <link rel="alternate" href="http://chuiyi.wang/atom.xml" title="王小垂 · Tracy" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://o6qjyk8rv.bkt.clouddn.com/favicon2.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="由于excel在OS X系统上无可救药的运行速度，我决定开始学MySQL。一通搜索后找到了《MySQL必知必会》这本书，边看边敲两天下来豁然开朗。这本书确实如作者所言，是绝对适合对SQL一无所知的新手入门学习的。
+为了日后使用方便，我想按照书里的顺序手动整理一份参考手册，好在网上早有人写过，我就不辛苦地从头造轮子了。所以本文是在现有基础上，结合着自己的使用情况，二次整理出的MySQL参考手册。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二次整理《MySQL必知必会》参考手册">
+<meta property="og:url" content="http://chuiyi.wang/2016/11/27/《MySQL必知必会》参考手册/index.html">
+<meta property="og:site_name" content="王小垂 · Tracy">
+<meta property="og:description" content="由于excel在OS X系统上无可救药的运行速度，我决定开始学MySQL。一通搜索后找到了《MySQL必知必会》这本书，边看边敲两天下来豁然开朗。这本书确实如作者所言，是绝对适合对SQL一无所知的新手入门学习的。
+为了日后使用方便，我想按照书里的顺序手动整理一份参考手册，好在网上早有人写过，我就不辛苦地从头造轮子了。所以本文是在现有基础上，结合着自己的使用情况，二次整理出的MySQL参考手册。">
+<meta property="og:updated_time" content="2016-11-27T16:54:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="二次整理《MySQL必知必会》参考手册">
+<meta name="twitter:description" content="由于excel在OS X系统上无可救药的运行速度，我决定开始学MySQL。一通搜索后找到了《MySQL必知必会》这本书，边看边敲两天下来豁然开朗。这本书确实如作者所言，是绝对适合对SQL一无所知的新手入门学习的。
+为了日后使用方便，我想按照书里的顺序手动整理一份参考手册，好在网上早有人写过，我就不辛苦地从头造轮子了。所以本文是在现有基础上，结合着自己的使用情况，二次整理出的MySQL参考手册。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://chuiyi.wang/2016/11/27/《MySQL必知必会》参考手册/"/>
+
+  <title> 二次整理《MySQL必知必会》参考手册 | 王小垂 · Tracy </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?51bab037bd4384c97bc5f71e9055f606";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">王小垂 · Tracy</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">诗酒趁年华</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                二次整理《MySQL必知必会》参考手册
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-27T22:54:26+08:00" content="2016-11-27">
+              2016-11-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学代码的Tracy/" itemprop="url" rel="index">
+                    <span itemprop="name">学代码的Tracy</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>由于excel在OS X系统上无可救药的运行速度，我决定开始学MySQL。一通搜索后找到了<a href="https://book.douban.com/subject/3354490/" target="_blank" rel="external">《MySQL必知必会》</a>这本书，边看边敲两天下来豁然开朗。这本书确实如作者所言，是绝对适合对SQL一无所知的新手入门学习的。</p>
+<p>为了日后使用方便，我想按照书里的顺序手动整理一份参考手册，好在网上早有人写过，我就不辛苦地从头造轮子了。所以本文是在现有基础上，结合着自己的使用情况，二次整理出的MySQL参考手册。</p>
+<a id="more"></a>
+<h2 id="选择数据库相关命令"><a href="#选择数据库相关命令" class="headerlink" title="选择数据库相关命令"></a>选择数据库相关命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">USE database_name;  </span><br><span class="line">SHOW DATABASE;  </span><br><span class="line">SHOW TABLES;  </span><br><span class="line">SHOW COLUMNS FROM customers;  </span><br><span class="line">SHOW STATUS;  </span><br><span class="line">SHOW CREATE DATABASE;  </span><br><span class="line">SHOW CREATE TABLES;  </span><br><span class="line">SHOW GRANTS;  </span><br><span class="line">SHOW ERRORS;  </span><br><span class="line">SHOW WARNINGS;</span><br></pre></td></tr></table></figure>
+<h2 id="检索数据库"><a href="#检索数据库" class="headerlink" title="检索数据库"></a>检索数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_id, prod_name, prod_price  </span><br><span class="line">FROM products;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT *  </span><br><span class="line">FROM products;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT vend_id  </span><br><span class="line">FROM products;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_name  </span><br><span class="line">FROM products  </span><br><span class="line">LIMIT 5, 5;  </span><br><span class="line"># LIMIT 5, 5 指示MySQL返回从行5开始的5行。</span><br><span class="line"># 第一个数为开始位置，第二个数为要检索的行数。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT products.prod_name  </span><br><span class="line">FROM products;</span><br></pre></td></tr></table></figure>
+<h2 id="排序检索"><a href="#排序检索" class="headerlink" title="排序检索"></a>排序检索</h2><ul>
+<li>ORDER</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_id, prod_price, prod_name  </span><br><span class="line">FROM products  </span><br><span class="line">ORDER BY prod_price DESC, prod_name;</span><br><span class="line"># DESC关键字只应用到直接位于其前面的列名。</span><br></pre></td></tr></table></figure>
+<h2 id="过滤数据"><a href="#过滤数据" class="headerlink" title="过滤数据"></a>过滤数据</h2><ul>
+<li>AND操作符，OR操作符</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_name, prod_price  </span><br><span class="line">FROM products  </span><br><span class="line">WEHRE vend_id = 1002 OR vend_id = 1003 AND prod_price &gt;= 10;  </span><br><span class="line"># SQL在处理OR操作符之前，优先处理AND操作符。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>IN操作符</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_name, prod_price  </span><br><span class="line">FROM products  </span><br><span class="line">WHERE vend_id IN (1002, 1003)  </span><br><span class="line">ORDER BY prod_name;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>NOT 操作符</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_name, prod_price  </span><br><span class="line">FROM products  </span><br><span class="line">WHERE vend_id NOT IN (1002, 1003)  </span><br><span class="line">ORDER BY prod_name;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>百分号（%）通配符</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_id, prod_name  </span><br><span class="line">FROM products  </span><br><span class="line">WHERE prod_name LIKE &apos;jet%&apos;;  </span><br><span class="line"># %可以匹配0个字符</span><br></pre></td></tr></table></figure>
+<ul>
+<li>下划线( _ ) 通配符</li>
+</ul>
+<p>下划线的用途与%一样，但下划线只匹配单个字符而不是多个字符。</p>
+<p>a) 不要过度使用通配符。如果其他操作符能达到相同的效果，应该使用其他操作符。</p>
+<p>b) 在确实需要使用通配符时，除非绝对有必要，否则不要把它们用在搜索模式的开始处。把通配符置于搜索模式的开始处，搜索起来是最慢的。</p>
+<ul>
+<li>正则表达式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_name  </span><br><span class="line">FROM products  </span><br><span class="line">WHERE prod_name REGEXP &apos;1000|2000&apos;  </span><br><span class="line">ORDER BY prod_name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_name  </span><br><span class="line">FROM products  </span><br><span class="line">WHERE prod_name REGEXP &apos;[123] Ton&apos;  </span><br><span class="line">ORDER BY prod_name;  </span><br><span class="line"># [123]也就是[1|2|3]的缩写。</span><br></pre></td></tr></table></figure>
+<p>LIEK与REGEXP之间有一个重要的差别：LIKE匹配整个列，如果被匹配的文本仅在列值中出现，LIKE将不会找到它，相应的行也不会被返回（除非使用通配符）。而REGEXP在列值内进行匹配，如果被匹配的文本在列值中出现，REGEXP就会找到它，相应的行将被返回。</p>
+<h2 id="创建计算字段"><a href="#创建计算字段" class="headerlink" title="创建计算字段"></a>创建计算字段</h2><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT Concat(RTrim(vend_name), &apos; (&apos;, RTrim(vend_country), &apos;)&apos;) AS vend_title  </span><br><span class="line">FROM vendors  </span><br><span class="line">ORDER BY vend_name;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>文本处理函数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Left()</span><br><span class="line">Length()</span><br><span class="line">Locate()</span><br><span class="line">Ltrim()</span><br><span class="line">Right()</span><br><span class="line">Rtrim()</span><br><span class="line">Soundex()</span><br><span class="line">SubString()</span><br><span class="line">Upper()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间和日期处理函数 </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">AddDate()</span><br><span class="line">AddTime()</span><br><span class="line">CurDate()</span><br><span class="line">CurTime()</span><br><span class="line">Date()</span><br><span class="line">DateDiff()</span><br><span class="line">Date_Add()</span><br><span class="line">Date_Format</span><br><span class="line">Day()</span><br><span class="line">DayOfWeek()</span><br><span class="line">Hour()</span><br><span class="line">Minute()</span><br><span class="line">Month()</span><br><span class="line">Now()</span><br><span class="line">Second()</span><br><span class="line">Time()</span><br><span class="line">Year()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>数值处理函数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Abs()</span><br><span class="line">Cos()</span><br><span class="line">Mod()</span><br><span class="line">Pi()</span><br><span class="line">Rand(）</span><br><span class="line">Sin()</span><br><span class="line">Sqrt()</span><br><span class="line">Tan()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>汇总数据（聚集函数）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AVG()</span><br><span class="line">COUNT()</span><br><span class="line">MAX()</span><br><span class="line">MIN()</span><br><span class="line">SUM()</span><br></pre></td></tr></table></figure>
+<p>COUNT(): </p>
+<p>a) 使用COUNT(*)对表中行的数目进行计数，不管表列中包含的空值(NULL），还是非空值。<br>b) 使用COUNT(column)对特定列中具有值的行进行计数，忽略NULL值。</p>
+<p>对非数值数据使用MAX()：</p>
+<p>虽然MAX()一般用来找出最大的数值或日期值，但MySQL允许将它用来返回任意列中的最大值，包括文本列中的最大值。在用于文本数据时，如果数据按相应的列排序，则MAX()返回最后一行。MIN()返回第一行。</p>
+<h2 id="数据分组（≈Excel的透视表）"><a href="#数据分组（≈Excel的透视表）" class="headerlink" title="数据分组（≈Excel的透视表）"></a>数据分组（≈Excel的透视表）</h2><ul>
+<li>GROUP BY</li>
+<li>HAVING</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT vend_id, COUNT(*) AS num_prods  </span><br><span class="line">FROM products  </span><br><span class="line">WHERE prod_price &gt;= 10  </span><br><span class="line">GROUP BY vend_id  </span><br><span class="line">HAVING COUNT(*) &gt;= 2;</span><br></pre></td></tr></table></figure>
+<p>SELECT子句及其顺序:</p>
+<p>SELECT =&gt; FROM =&gt; WHERE =&gt; GROUP BY =&gt; HAVING =&gt; ORDER BY =&gt;LIMIT </p>
+<h2 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SELECT cust_name, cust_contact  </span><br><span class="line">FROM customers  </span><br><span class="line">WHERE cust_id IN </span><br><span class="line">	(SELECT cust_id </span><br><span class="line">	FROM orders </span><br><span class="line">	WHERE order_num IN </span><br><span class="line">		(SELECT order_num </span><br><span class="line">		FROM orderitems </span><br><span class="line">		WHERE prod_id = &apos;TNT2&apos;));</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT cust_name, cust_state,  </span><br><span class="line">             (SELECT COUNT(*)  </span><br><span class="line">              FROM orders  </span><br><span class="line">              WHERE orders.cust_id = customers.cust_id) AS orders  </span><br><span class="line">FROM customers  </span><br><span class="line">ORDER BY cust_name;</span><br></pre></td></tr></table></figure>
+<h2 id="联结表"><a href="#联结表" class="headerlink" title="联结表"></a>联结表</h2><ul>
+<li>创建联结</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_name, vend_name, prod_price, quantity</span><br><span class="line">FROM orderitems, products, vendors</span><br><span class="line">WHERE products.vend_id = vendors.vend_id</span><br><span class="line">AND orderitems.prod_id = products.prod_id</span><br><span class="line">AND order_num = 20005;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>内部联结（等值联结）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT vend_name, prod_name, prod_price</span><br><span class="line">FROM vendors INNER JOIN products</span><br><span class="line">ON vendors.vend_id = products.vend_id;</span><br></pre></td></tr></table></figure>
+<p>两个表之间的关系以 INNER JOIN 指定，ON 的条件与上例 WHERE 条件相同</p>
+<ul>
+<li>使用表别名</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT cust_name, cust_contact</span><br><span class="line">FROM customers AS c, orders AS o, orderitems AS oi</span><br><span class="line">WHERE c.cust_id = o.cust_id</span><br><span class="line">AND oi.order_num = o.order_num</span><br><span class="line">AND prod_id = &apos;TNT2&apos;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>自联结</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_id, prod_name FROM products</span><br><span class="line">WHERE vend_id = (SELECT vend_id FROM products</span><br><span class="line">WHERE prod_id = &apos;DTNTR&apos;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT p1.prod_id, p1.prod_name</span><br><span class="line">FROM products AS p1, products AS p2</span><br><span class="line">WHERE p1.vend_id = p2.vend_id AND p2.prod_id = &apos;DTNTR&apos;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>外部联结</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT customers.cust_id, orders.order_num</span><br><span class="line">FROM customers LEFT OUTER JOIN orders</span><br><span class="line">ON customers.cust_id = orders.cust_id;</span><br></pre></td></tr></table></figure>
+<p>LEFT 指从左边的表选择所有行</p>
+<p>RIGHT 指从右边的表选择所有行</p>
+<h2 id="组合查询"><a href="#组合查询" class="headerlink" title="组合查询"></a>组合查询</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT vend_id, prod_id, prod_price  </span><br><span class="line">FROM products  </span><br><span class="line">WHERE prod_price &lt;= 5  </span><br><span class="line">UNION  </span><br><span class="line">SELECT vend_id, prod_id, prod_price  </span><br><span class="line">FROM products  </span><br><span class="line">WHERE vend_id IN (1001, 1002);</span><br></pre></td></tr></table></figure>
+<p>UNION必须由两条或两条以上的SELECT语句组成，语句之间用关键字UNION分隔。</p>
+<p>列数据类型必须兼容：类型不必完全相同，但必须是DBMS可以隐含地转换的类型。</p>
+<p>UNION默认行为是去除了重复的行。如果不要求去除重复的行，可以用UNION ALL。</p>
+<h2 id="表格、数据操作"><a href="#表格、数据操作" class="headerlink" title="表格、数据操作"></a>表格、数据操作</h2><ul>
+<li>创建表格</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE productnotes</span><br><span class="line">(</span><br><span class="line">  note_id    int           NOT NULL AUTO_INCREMENT,</span><br><span class="line">  prod_id    char(10)      NOT NULL,</span><br><span class="line">  note_date datetime       NOT NULL,</span><br><span class="line">  note_text  text          NULL ,</span><br><span class="line">  PRIMARY KEY(note_id),</span><br><span class="line">  FULLTEXT(note_text)</span><br><span class="line">) ENGINE=MyISAM;</span><br></pre></td></tr></table></figure>
+<p><strong>引擎类型：</strong></p>
+<p>a) InnoDB：事务处理引擎，不支持全文本搜索；</p>
+<p>b) MEMORY：功能上等同于MyISAM，但由于数据存储在内存（不是磁盘）中，速度很快（特别适合于临时表）；</p>
+<p>c） MyISAM：支持全文本搜索，不支持事务处理。</p>
+<ul>
+<li>插入表格</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO productnotes</span><br><span class="line">(</span><br><span class="line">	note_id, </span><br><span class="line">	prod_id, </span><br><span class="line">	note_date, </span><br><span class="line">	note_text</span><br><span class="line">)</span><br><span class="line">VALUES</span><br><span class="line">(</span><br><span class="line">	101, </span><br><span class="line">	&apos;TNT2&apos;, </span><br><span class="line">	&apos;2005-08-17&apos;,</span><br><span class="line">	&apos;Customer complaint: Sticks not individually wrapped.&apos;</span><br><span class="line">);</span><br><span class="line">(</span><br><span class="line">	102, </span><br><span class="line">	&apos;TNT2&apos;, </span><br><span class="line">	&apos;2005-08-17&apos;,</span><br><span class="line">	&apos;Customer complaint: Sticks not individually wrapped.&apos;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 插入检索出的数据</span><br><span class="line">INSERT INTO productnotes</span><br><span class="line">(</span><br><span class="line">	note_id, </span><br><span class="line">	prod_id, </span><br><span class="line">	note_date, </span><br><span class="line">	note_text</span><br><span class="line">)</span><br><span class="line">SELECT</span><br><span class="line">	note_id, </span><br><span class="line">	prod_id, </span><br><span class="line">	note_date, </span><br><span class="line">	note_text</span><br><span class="line">FROM another_table;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更新表（ALTER TABLE）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">添加一个列</span><br><span class="line">ALTER TABLE venders</span><br><span class="line">ADD vend_phone CHAR(20);</span><br><span class="line">删除一个列</span><br><span class="line">ALTER TABLE venders</span><br><span class="line">DROP COLUMN vend_phone;</span><br><span class="line">定义外键</span><br><span class="line">ALTER TABLE orderitems ADD CONSTRAINT fk_orderitems_orders FOREIGN KEY (order_num) REFERENCES orders (order_num);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">删除表</span><br><span class="line">DROP TABLE customers2;</span><br><span class="line">重命名表</span><br><span class="line">RENAME TABLE customers2 TO customers;</span><br></pre></td></tr></table></figure>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><p>不是很明白视图的意义，不过好像很重要的样子。先占个位~</p>
+<h2 id="存储过程-FAVORITE）"><a href="#存储过程-FAVORITE）" class="headerlink" title="存储过程(FAVORITE）"></a>存储过程(FAVORITE）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER //</span><br><span class="line"></span><br><span class="line">CREATE PROCEDURE productpricing()</span><br><span class="line">BEGIN</span><br><span class="line">	SELECT AVG(prod_price) AS priceaverage</span><br><span class="line">	FROM products;</span><br><span class="line">END //</span><br><span class="line"></span><br><span class="line">DELIMITER ;</span><br><span class="line">=======================</span><br><span class="line">CALL productpricing();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER //</span><br><span class="line"></span><br><span class="line">CREATE PROCEDURE productpricing(</span><br><span class="line">	OUT p1 DECIMAL(8,2)</span><br><span class="line">	OUT p2 DECIMAL(8,2)</span><br><span class="line">	OUT p3 DECIMAL(8,2)</span><br><span class="line">)</span><br><span class="line">BEGIN</span><br><span class="line">	SELECT AVG(prod_price)</span><br><span class="line">	INTO P1</span><br><span class="line">	FROM products;</span><br><span class="line">	SELECT MIN(prod_price)</span><br><span class="line">	INTO P2</span><br><span class="line">	FROM products;</span><br><span class="line">	SELECT MAX(prod_price)</span><br><span class="line">	INTO P3</span><br><span class="line">	FROM products;</span><br><span class="line">END //</span><br><span class="line"></span><br><span class="line">DELIMITER ;</span><br><span class="line">========================</span><br><span class="line">CALL productpricing(@a, @b, @c);</span><br><span class="line">SELECT @a;</span><br></pre></td></tr></table></figure>
+<p>TBC…</p>
+<p><br></p>
+<p>【REFERENCE】</p>
+<p><a href="http://blog.csdn.net/zero_lee/article/details/7890421" target="_blank" rel="external">http://blog.csdn.net/zero_lee/article/details/7890421</a></p>
+<p><a href="http://www.cnblogs.com/feifeifanye/p/5954811.html" target="_blank" rel="external">http://www.cnblogs.com/feifeifanye/p/5954811.html</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag">#MySQL</a>
+          
+            <a href="/tags/数据分析/" rel="tag">#数据分析</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/01/入职两周/" rel="next" title="入职两周">
+                <i class="fa fa-chevron-left"></i> 入职两周
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://o6qjyk8rv.bkt.clouddn.com/%E5%B0%8F%E8%8D%89%E5%AE%9D.jpeg"
+               alt="Tracy" />
+          <p class="site-author-name" itemprop="name">Tracy</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="http://chuiyi.wang/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/wang-chui-yi-43" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-question-circle"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/63432100/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#选择数据库相关命令"><span class="nav-number">1.</span> <span class="nav-text">选择数据库相关命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检索数据库"><span class="nav-number">2.</span> <span class="nav-text">检索数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序检索"><span class="nav-number">3.</span> <span class="nav-text">排序检索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤数据"><span class="nav-number">4.</span> <span class="nav-text">过滤数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建计算字段"><span class="nav-number">5.</span> <span class="nav-text">创建计算字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据分组（≈Excel的透视表）"><span class="nav-number">6.</span> <span class="nav-text">数据分组（≈Excel的透视表）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子查询"><span class="nav-number">7.</span> <span class="nav-text">子查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#联结表"><span class="nav-number">8.</span> <span class="nav-text">联结表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组合查询"><span class="nav-number">9.</span> <span class="nav-text">组合查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格、数据操作"><span class="nav-number">10.</span> <span class="nav-text">表格、数据操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图"><span class="nav-number">11.</span> <span class="nav-text">视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储过程-FAVORITE）"><span class="nav-number">12.</span> <span class="nav-text">存储过程(FAVORITE）</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tracy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
