@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="大锤Tracy, Tracy工具箱" />
+  <meta name="keywords" content="Python,Pandas,数据分析," />
 
 
 
@@ -86,34 +86,31 @@
 
 
 
-<meta name="description" content="一直有建个博客来记录日常想法的念头。忘了在哪看到这句话了：书写是为了更好的思考。
-我相信长期写文章的习惯会给思考带来益处，原因如下：
-
-有益于系统性思考
-日常的思考大多由东一块西一块的碎片组成，而为了写一篇文章，就必须对自己的思想进行重新组织，用符合逻辑的框架来阐述。
-
-练习说服力">
+<meta name="description" content="Mark一下用Python读取MySQL数据库的过程，以备使用。
+输入：
+import pandas as pd
+import MySQLdb
+# 输入数据库信息
+mysql_cn= MySQLdb.connect(host=&amp;apos;127.0.0.1&amp;apos;, port=3306, user=&amp;apos;root&amp;apos;, passwd=&amp;apos;wobushimima&amp;apos;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="书写，为了更好的思考">
-<meta property="og:url" content="http://chuiyi.wang/2016/03/11/书写，为了更好的思考/index.html">
+<meta property="og:title" content="Python Pandas之读取MySQL数据库">
+<meta property="og:url" content="http://chuiyi.wang/2016/12/11/Python-Pandas之读取MySQL数据库/index.html">
 <meta property="og:site_name" content="王小垂 · Tracy">
-<meta property="og:description" content="一直有建个博客来记录日常想法的念头。忘了在哪看到这句话了：书写是为了更好的思考。
-我相信长期写文章的习惯会给思考带来益处，原因如下：
-
-有益于系统性思考
-日常的思考大多由东一块西一块的碎片组成，而为了写一篇文章，就必须对自己的思想进行重新组织，用符合逻辑的框架来阐述。
-
-练习说服力">
-<meta property="og:updated_time" content="2016-08-04T15:19:57.000Z">
+<meta property="og:description" content="Mark一下用Python读取MySQL数据库的过程，以备使用。
+输入：
+import pandas as pd
+import MySQLdb
+# 输入数据库信息
+mysql_cn= MySQLdb.connect(host=&amp;apos;127.0.0.1&amp;apos;, port=3306, user=&amp;apos;root&amp;apos;, passwd=&amp;apos;wobushimima&amp;apos;">
+<meta property="og:updated_time" content="2016-12-11T09:42:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="书写，为了更好的思考">
-<meta name="twitter:description" content="一直有建个博客来记录日常想法的念头。忘了在哪看到这句话了：书写是为了更好的思考。
-我相信长期写文章的习惯会给思考带来益处，原因如下：
-
-有益于系统性思考
-日常的思考大多由东一块西一块的碎片组成，而为了写一篇文章，就必须对自己的思想进行重新组织，用符合逻辑的框架来阐述。
-
-练习说服力">
+<meta name="twitter:title" content="Python Pandas之读取MySQL数据库">
+<meta name="twitter:description" content="Mark一下用Python读取MySQL数据库的过程，以备使用。
+输入：
+import pandas as pd
+import MySQLdb
+# 输入数据库信息
+mysql_cn= MySQLdb.connect(host=&amp;apos;127.0.0.1&amp;apos;, port=3306, user=&amp;apos;root&amp;apos;, passwd=&amp;apos;wobushimima&amp;apos;">
 
 
 
@@ -134,9 +131,9 @@
 
 
 
-  <link rel="canonical" href="http://chuiyi.wang/2016/03/11/书写，为了更好的思考/"/>
+  <link rel="canonical" href="http://chuiyi.wang/2016/12/11/Python-Pandas之读取MySQL数据库/"/>
 
-  <title> 书写，为了更好的思考 | 王小垂 · Tracy </title>
+  <title> Python Pandas之读取MySQL数据库 | 王小垂 · Tracy </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -266,7 +263,7 @@
             
             
               
-                书写，为了更好的思考
+                Python Pandas之读取MySQL数据库
               
             
           </h1>
@@ -278,8 +275,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-11T09:44:00+08:00" content="2016-03-11">
-              2016-03-11
+            <time itemprop="dateCreated" datetime="2016-12-11T17:30:25+08:00" content="2016-12-11">
+              2016-12-11
             </time>
           </span>
 
@@ -292,8 +289,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/湿货/" itemprop="url" rel="index">
-                    <span itemprop="name">湿货</span>
+                  <a href="/categories/学代码的Tracy/" itemprop="url" rel="index">
+                    <span itemprop="name">学代码的Tracy</span>
                   </a>
                 </span>
 
@@ -325,25 +322,80 @@
       
 
       
-        <p>一直有建个博客来记录日常想法的念头。忘了在哪看到这句话了：书写是为了更好的思考。</p>
-<p>我相信长期写文章的习惯会给思考带来益处，原因如下：</p>
-<ol>
-<li><p><strong>有益于系统性思考</strong></p>
-<p>日常的思考大多由东一块西一块的碎片组成，而为了写一篇文章，就必须对自己的思想进行重新组织，用符合逻辑的框架来阐述。</p>
-</li>
-<li><p><strong>练习说服力</strong></p>
-<a id="more"></a> 
-<p>同样的内容，阐述的角度不同，对读者产生的影响力也大不相同。在写文章的过程中，时刻换位思考：如果我是读者，我会对怎样的语言信服？</p>
-</li>
-<li><p><strong>刺激思考频率</strong></p>
-<p>为了保持文章的更新，我会把日常对自己抛出的问题加入To Do List中，待有时间就静下心来思考和输出。</p>
-</li>
-<li><p><strong>在交流中获得更多</strong></p>
-<p>从以往的经验来看，我在交流中常有收获。如果我的文章能引起读者的一点思考和反馈，那就不虚此行。</p>
-</li>
-</ol>
-<p>之所以选择个人建站而非安家新浪等大站，有两个原因。一是想找一片清净、优雅的土地，专注书写。二是中二病发作，觉得以自己的姓名全拼作为域名挺酷的。</p>
-<p>建站过程中，我的朋友Liam给了很大帮助。让我再次热泪盈眶地感叹一句：程序员，让生活更美好！</p>
+        <p>Mark一下用Python读取MySQL数据库的过程，以备使用。</p>
+<p>输入：</p>
+<pre><code>import pandas as pd
+import MySQLdb
+# 输入数据库信息
+mysql_cn= MySQLdb.connect(host=&apos;127.0.0.1&apos;, port=3306, user=&apos;root&apos;, passwd=&apos;wobushimima&apos;, db=&apos;crashcourse&apos;)
+# 读取数据库中的products表，赋值给df
+df = pd.read_sql(&apos;select * from products;&apos;, con=mysql_cn)    
+mysql_cn.close()
+
+# 打印df表
+print &apos;======================df======================&apos;
+print df
+# 使用describe()对df表进行描述统计
+print &apos;=================describe it==================&apos;
+print df.describe()
+</code></pre><a id="more"></a>
+<p>输出：</p>
+<pre><code>
+    ======================df======================
+   prod_id  vend_id       prod_name  prod_price  \
+0    ANV01     1001    .5 ton anvil        5.99   
+1    ANV02     1001     1 ton anvil        9.99   
+2    ANV03     1001     2 ton anvil       14.99   
+3    DTNTR     1003       Detonator       13.00   
+4       FB     1003       Bird seed       10.00   
+5       FC     1003         Carrots        2.50   
+6      FU1     1002           Fuses        3.42   
+7   JP1000     1005    JetPack 1000       35.00   
+8   JP2000     1005    JetPack 2000       55.00   
+9      OL1     1002         Oil can        8.99   
+10    SAFE     1003            Safe       50.00   
+11   SLING     1003           Sling        4.49   
+12    TNT1     1003   TNT (1 stick)        2.50   
+13    TNT2     1003  TNT (5 sticks)       10.00   
+
+                                            prod_desc  
+0       .5 ton anvil, black, complete with handy hook  
+1   1 ton anvil, black, complete with handy hook a...  
+2   2 ton anvil, black, complete with handy hook a...  
+3     Detonator (plunger powered), fuses not included  
+4               Large bag (suitable for road runners)  
+5                Carrots (rabbit hunting season only)  
+6                                 1 dozen, extra long  
+7               JetPack 1000, intended for single use  
+8                             JetPack 2000, multi-use  
+9                                        Oil can, red  
+10                         Safe with combination lock  
+11                           Sling, one size fits all  
+12                             TNT, red, single stick  
+13                        TNT, red, pack of 10 sticks  
+=================describe it==================
+           vend_id  prod_price
+count    14.000000   14.000000
+mean   1002.714286   16.133571
+std       1.266647   17.454264
+min    1001.000000    2.500000
+25%    1002.000000    4.865000
+50%    1003.000000    9.995000
+75%    1003.000000   14.492500
+max    1005.000000   55.000000
+</code></pre>
+
+
+<h2 id="附：mac下的环境配置"><a href="#附：mac下的环境配置" class="headerlink" title="附：mac下的环境配置"></a>附：mac下的环境配置</h2><p>首先，当然是要安装pandas包啦</p>
+<pre><code>$ easy_install pandas
+</code></pre><p>这个过程比较久，可以去吃点小零食~</p>
+<p>另外还要安装MySQLdb，命令如下：</p>
+<pre><code>$ pip install MySQL-python
+</code></pre><p>然而在mac下会出现错误提示：</p>
+<pre><code>EnvironmentError: mysql_config not found
+</code></pre><p>最简单的解决方式是，在pip install前加上这一行：</p>
+<pre><code>$ sudo ln -s /usr/local/mysql/bin/* /usr/bin
+</code></pre><p>这样，环境就配置好了。</p>
 
       
     </div>
@@ -363,18 +415,28 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/Pandas/" rel="tag">#Pandas</a>
+          
+            <a href="/tags/数据分析/" rel="tag">#数据分析</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/11/27/《MySQL必知必会》参考手册/" rel="next" title="二次整理《MySQL必知必会》参考手册">
+                <i class="fa fa-chevron-left"></i> 二次整理《MySQL必知必会》参考手册
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/12/关于成功，有人发现了这些统计学规律/" rel="prev" title="关于成功，有人发现了这些统计学规律">
-                关于成功，有人发现了这些统计学规律 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -515,7 +577,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#附：mac下的环境配置"><span class="nav-number">1.</span> <span class="nav-text">附：mac下的环境配置</span></a></li></ol></div>
             
           </div>
         </section>

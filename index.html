@@ -250,6 +250,137 @@
             
               
                 
+                <a class="post-title-link" href="/2016/12/11/Python-Pandas之读取MySQL数据库/" itemprop="url">
+                  Python Pandas之读取MySQL数据库
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-11T17:30:25+08:00" content="2016-12-11">
+              2016-12-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学代码的Tracy/" itemprop="url" rel="index">
+                    <span itemprop="name">学代码的Tracy</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Mark一下用Python读取MySQL数据库的过程，以备使用。</p>
+<p>输入：</p>
+<pre><code>import pandas as pd
+import MySQLdb
+# 输入数据库信息
+mysql_cn= MySQLdb.connect(host=&apos;127.0.0.1&apos;, port=3306, user=&apos;root&apos;, passwd=&apos;wobushimima&apos;, db=&apos;crashcourse&apos;)
+# 读取数据库中的products表，赋值给df
+df = pd.read_sql(&apos;select * from products;&apos;, con=mysql_cn)    
+mysql_cn.close()
+
+# 打印df表
+print &apos;======================df======================&apos;
+print df
+# 使用describe()对df表进行描述统计
+print &apos;=================describe it==================&apos;
+print df.describe()
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/11/Python-Pandas之读取MySQL数据库/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/27/《MySQL必知必会》参考手册/" itemprop="url">
                   二次整理《MySQL必知必会》参考手册
                 </a>
@@ -1289,127 +1420,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/29/写了个chrome扩展：我的豆瓣/" itemprop="url">
-                  写了个chrome扩展：我的豆瓣
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-29T13:24:00+08:00" content="2016-05-29">
-              2016-05-29
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学代码的Tracy/" itemprop="url" rel="index">
-                    <span itemprop="name">学代码的Tracy</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://o6qjyk8rv.bkt.clouddn.com/%E8%B1%86%E7%93%A3icon.jpg" alt=""></p>
-<center><a href="https://chrome.google.com/webstore/detail/%E6%88%91%E7%9A%84%E8%B1%86%E7%93%A3/dkjnimbkalbkmhiebfofoogmhllmfkob"><strong>我的豆瓣</strong>安装地址</a></center>
-
-
-<p>前两天在写“Tracy工具箱”系列博客时，思维有点跳脱，跳到最后突然想研究一下chrome插件怎么写。</p>
-<p>刷刷知乎，又读了读<a href="https://book.douban.com/subject/25980975/">《Chrome扩展及应用开发》</a>。因为具备一点 前端基础，感觉入门可能不难。</p>
-<p>正好一直对豆瓣臃肿的画风不满，愉快地决定拿它操刀~</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/29/写了个chrome扩展：我的豆瓣/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1455,7 +1465,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1472,7 +1482,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
