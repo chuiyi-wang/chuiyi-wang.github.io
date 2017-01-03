@@ -95,7 +95,9 @@
 <meta property="og:description" content="问题用Python输出运算结果，当然是一件容易的事情。但是当你想把运算结果放到邮件时，就必须要考虑它的可读性。这时会涉及到样式的设置，最开始，我将原始输出结果粘贴到邮件正文，然后手动调整。一两次还好，但是如果每周都需要如此重复劳动，未免过于繁琐。
 运算过程可以自动化，样式的设置怎么可能不行呢？于是我想到了以下的办法，可能是目前学习成本和时间成本最低的方式之一。">
 <meta property="og:image" content="http://o6qjyk8rv.bkt.clouddn.com/print_makedown.png">
-<meta property="og:updated_time" content="2017-01-02T07:38:16.000Z">
+<meta property="og:image" content="http://o6qjyk8rv.bkt.clouddn.com/Screen%20Shot%202017-01-03%20at%2014.47.54.png">
+<meta property="og:image" content="http://o6qjyk8rv.bkt.clouddn.com/Screen%20Shot%202017-01-03%20at%2014.50.39.png">
+<meta property="og:updated_time" content="2017-01-03T06:55:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="巧用Markdown让Python输出的指定样式">
 <meta name="twitter:description" content="问题用Python输出运算结果，当然是一件容易的事情。但是当你想把运算结果放到邮件时，就必须要考虑它的可读性。这时会涉及到样式的设置，最开始，我将原始输出结果粘贴到邮件正文，然后手动调整。一两次还好，但是如果每周都需要如此重复劳动，未免过于繁琐。
@@ -322,6 +324,20 @@
 <li>单引号在Python里是特殊字符，要记得转义。</li>
 <li>markdown里两段之间如果没有空一行，首尾会接在一起，所以在Python中段与段之间别忘了<code>print &#39;\n&#39;</code></li>
 </ol>
+<h3 id="1月3日更新"><a href="#1月3日更新" class="headerlink" title="1月3日更新"></a>1月3日更新</h3><p>Python里的markdown2模块可以辅助完成这件事：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; import markdown2</span><br><span class="line">&gt;&gt;&gt; markdown2.markdown(&quot;*boo!*&quot;)  # or use `html = markdown_path(PATH)`</span><br><span class="line">u&apos;&lt;p&gt;&lt;em&gt;boo!&lt;/em&gt;&lt;/p&gt;\n&apos;</span><br></pre></td></tr></table></figure>
+<p>实例：</p>
+<pre><code>In [1239]: print markdown2.markdown(&apos;####五、消耗&apos;)
+      ...: print markdown2.markdown(&apos;广告的总消耗：%s 元&apos; % 100)
+      ...: print markdown2.markdown(&apos;（条件A）的广告的总消耗：%s 元&apos; % 100)
+      ...: print markdown2.markdown(&apos;**（条件B）的广告的总消耗：%s 元**&apos; % 100)
+      ...: print markdown2.markdown(&apos;**（条件C）的广告的总消耗：%s 元**&apos; % 100)
+      ...: print markdown2.markdown(&apos;（条件D）的广告的总消耗：%s 元&apos; % 100)
+      ...: print markdown2.markdown(&apos;*结论：条件B ∪ 条件C 的广告消耗，占当日广告总消
+      ...: 耗的%.2f%%*&apos; % 100)
+</code></pre><p>Out:<br><img src="http://o6qjyk8rv.bkt.clouddn.com/Screen%20Shot%202017-01-03%20at%2014.47.54.png" alt=""></p>
+<h4 id="效果预览："><a href="#效果预览：" class="headerlink" title="效果预览："></a>效果预览：</h4><p><img src="http://o6qjyk8rv.bkt.clouddn.com/Screen%20Shot%202017-01-03%20at%2014.50.39.png" alt=""></p>
+<p>由于markdown的效果有限，所以要换颜色，还是得靠自己…</p>
 
       
     </div>
@@ -493,7 +509,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决"><span class="nav-number">3.</span> <span class="nav-text">解决</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">4.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决"><span class="nav-number">3.</span> <span class="nav-text">解决</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">4.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1月3日更新"><span class="nav-number">5.</span> <span class="nav-text">1月3日更新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#效果预览："><span class="nav-number">5.1.</span> <span class="nav-text">效果预览：</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
