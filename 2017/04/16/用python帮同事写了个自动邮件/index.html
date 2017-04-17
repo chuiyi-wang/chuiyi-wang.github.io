@@ -1,0 +1,626 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="大锤Tracy, Tracy工具箱" />
+
+
+
+
+
+  <link rel="alternate" href="http://chuiyi.wang/atom.xml" title="王小垂 · Tracy" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://o6qjyk8rv.bkt.clouddn.com/favicon2.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="运行效果终端：tarus-MacBook-Air:Python代码 TracyW$ python 预算消耗周报_blog_version.py 【初始化程序】- 大锤棒不棒：棒棒哒！- 初始化成功...【搞数据！】- 正在搞数- 正在检查异常数据- 正在生成html【用时0.56秒】【发邮件！】- 开始发送邮件	请输入邮箱&amp;lt;tracywang@qiyi.com&amp;gt;的密码：- 正在发送邮件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Python帮同事写了个自动邮件">
+<meta property="og:url" content="http://chuiyi.wang/2017/04/16/用python帮同事写了个自动邮件/index.html">
+<meta property="og:site_name" content="王小垂 · Tracy">
+<meta property="og:description" content="运行效果终端：tarus-MacBook-Air:Python代码 TracyW$ python 预算消耗周报_blog_version.py 【初始化程序】- 大锤棒不棒：棒棒哒！- 初始化成功...【搞数据！】- 正在搞数- 正在检查异常数据- 正在生成html【用时0.56秒】【发邮件！】- 开始发送邮件	请输入邮箱&amp;lt;tracywang@qiyi.com&amp;gt;的密码：- 正在发送邮件">
+<meta property="og:image" content="http://o6qjyk8rv.bkt.clouddn.com/Screen%20Shot%202017-04-16%20at%2020.39.55.png">
+<meta property="og:image" content="http://o6qjyk8rv.bkt.clouddn.com/Screen%20Shot%202017-04-16%20at%2021.03.37.png">
+<meta property="og:updated_time" content="2017-04-16T14:11:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用Python帮同事写了个自动邮件">
+<meta name="twitter:description" content="运行效果终端：tarus-MacBook-Air:Python代码 TracyW$ python 预算消耗周报_blog_version.py 【初始化程序】- 大锤棒不棒：棒棒哒！- 初始化成功...【搞数据！】- 正在搞数- 正在检查异常数据- 正在生成html【用时0.56秒】【发邮件！】- 开始发送邮件	请输入邮箱&amp;lt;tracywang@qiyi.com&amp;gt;的密码：- 正在发送邮件">
+<meta name="twitter:image" content="http://o6qjyk8rv.bkt.clouddn.com/Screen%20Shot%202017-04-16%20at%2020.39.55.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://chuiyi.wang/2017/04/16/用python帮同事写了个自动邮件/"/>
+
+  <title> 用Python帮同事写了个自动邮件 | 王小垂 · Tracy </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?51bab037bd4384c97bc5f71e9055f606";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">王小垂 · Tracy</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">诗酒趁年华</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                用Python帮同事写了个自动邮件
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-16T20:19:34+08:00" content="2017-04-16">
+              2017-04-16
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h2><h3 id="终端："><a href="#终端：" class="headerlink" title="终端："></a>终端：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tarus-MacBook-Air:Python代码 TracyW$ python 预算消耗周报_blog_version.py </span><br><span class="line">【初始化程序】</span><br><span class="line">- 大锤棒不棒：棒棒哒！</span><br><span class="line">- 初始化成功...</span><br><span class="line"></span><br><span class="line">【搞数据！】</span><br><span class="line">- 正在搞数</span><br><span class="line">- 正在检查异常数据</span><br><span class="line">- 正在生成html</span><br><span class="line">【用时0.56秒】</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">【发邮件！】</span><br><span class="line">- 开始发送邮件</span><br><span class="line">	请输入邮箱&lt;tracywang@qiyi.com&gt;的密码：</span><br><span class="line">- 正在发送邮件...</span><br><span class="line">- 邮件发送成功~</span><br><span class="line">【用时9.07秒】</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">(•ө•)♡ 总用时9.63秒，大锤真是太棒了!</span><br><span class="line"></span><br><span class="line">敲击回车退出程序...</span><br></pre></td></tr></table></figure>
+<h3 id="邮件："><a href="#邮件：" class="headerlink" title="邮件："></a>邮件：</h3><p><img src="http://o6qjyk8rv.bkt.clouddn.com/Screen%20Shot%202017-04-16%20at%2020.39.55.png" alt=""></p>
+<p>*数据和真实业务线/广告类型名称已被替换</p>
+<a id="more"></a>
+<h2 id="一点点感想"><a href="#一点点感想" class="headerlink" title="一点点感想"></a>一点点感想</h2><h3 id="先做到“正确”"><a href="#先做到“正确”" class="headerlink" title="先做到“正确”"></a>先做到“正确”</h3><p>写这个小程序，起因是同事请我帮忙把他的周报写成程序，以免去每周四的重复劳动之苦。这个需求，乍一看就是个透视表，没什么难度。但是要做到全自动邮件，就必须考虑很多潜在情况，这里着实花了一些时间。</p>
+<p>几个小细节：</p>
+<ul>
+<li>数据清洗时，去除了因延迟导致的“有点击无曝光”的数据。</li>
+<li>透视表里的数，根据业务需求，基本上是CTR，有一列是VTR。</li>
+<li>透视表最后一列的均值，不是本列所有行的点击率之平均，而是该广告类型下的sum(click or trueview)/ sum(曝光)</li>
+<li>若任何一个点击率的曝光量低于100，那么点击率很可能存在偏差，会置灰提醒。</li>
+</ul>
+<h3 id="再做到“易用”"><a href="#再做到“易用”" class="headerlink" title="再做到“易用”"></a>再做到“易用”</h3><p>我自己的周报虽然早已脚本化了，但是写得简陋，基本不考虑用户体验，反正用户是我自己。。。而给别人写的程序，就会比较仔细考虑每个步骤下的人机交互，也要避免因为没有考虑到可能的报错情况，而带来用户恐慌情绪。。。</p>
+<p>一个小细节：</p>
+<ul>
+<li>所谓程序初始化，目的就是为了让同事每周都回答一次大锤“棒棒哒！”，以达到洗脑功效23333333</li>
+</ul>
+<h3 id="最后还要“能看”"><a href="#最后还要“能看”" class="headerlink" title="最后还要“能看”"></a>最后还要“能看”</h3><p>一开始发出来的邮件，是这样的：</p>
+<p><img src="http://o6qjyk8rv.bkt.clouddn.com/Screen%20Shot%202017-04-16%20at%2021.03.37.png" alt=""></p>
+<p>太棒了，缺点就是界面复古了点……</p>
+<p>但我毕竟是个有点审美的产品经理，所以该改还是得改改。结果这一改，一天就过去了……</p>
+<p>目前是用pandas自带的to_html来生成表的html。想起我第一次写自动邮件，html竟然是强行写的，心疼蠢蠢的自己。</p>
+<p>样式植入则采用内部样式表（位于\<head>标签内部）和内敛样式（在HTML元素内部）两种方式，也是够用了。</head></p>
+<p>其实每次做前端的工作，我都会思考：程序员的“直男审美”，到底是天生的，还是因为懒得搞前端而丧失基本审美的呢。。。😂</p>
+<h2 id="一段不成熟的小代码"><a href="#一段不成熟的小代码" class="headerlink" title="一段不成熟的小代码"></a>一段不成熟的小代码</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import pandas as pd</span><br><span class="line">import re</span><br><span class="line">import smtplib</span><br><span class="line">from email.mime.text import MIMEText   </span><br><span class="line">from email.mime.multipart import MIMEMultipart   </span><br><span class="line">from email.mime.image import MIMEImage </span><br><span class="line">import codecs</span><br><span class="line">import getpass</span><br><span class="line">import time</span><br><span class="line">import datetime</span><br><span class="line"></span><br><span class="line">dict_ad_type = &#123;11: &apos;广告类型1&apos;, 21: &apos;广告类型2&apos;, 12: &apos;广告类型3&apos;, 24: &apos;广告类型4&apos;, 2701: &apos;广告类型5（VTR）&apos;, 2601: &apos;广告类型6&apos;, 1829: &apos;广告类型7&apos;, 1824: &apos;广告类型8&apos;, 1830: &apos;广告类型9&apos;, 23: &apos;广告类型10&apos;&#125;</span><br><span class="line">dict_biz_line = &#123;2031: &apos;业务线1&apos;, 2040: &apos;业务线2&apos;, 2024: &apos;业务线3&apos;, 2036: &apos;业务线4&apos;, 2025: &apos;业务线5&apos;, 2023: &apos;业务线6&apos;, 2041: &apos;业务线7&apos;, 2029: &apos;业务线8&apos;, 2026: &apos;业务线9&apos;, 2044: &apos;业务线10&apos;, 2039: &apos;业务线11&apos;, 2027: &apos;业务线12&apos;, 2020: &apos;业务线13&apos;, 2034: &apos;业务线14&apos;, 2043: &apos;业务线15&apos;, 2022: &apos;业务线16&apos;, 2042: &apos;业务线17&apos;, 2032: &apos;业务线18&apos;&#125;</span><br><span class="line"></span><br><span class="line">css = &apos;&apos;&apos;</span><br><span class="line">  &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">  html &#123;</span><br><span class="line">    font-family:&quot;微软雅黑&quot;,&quot;Microsoft YaHei&quot;;</span><br><span class="line">    text-align: center;</span><br><span class="line">  &#125;</span><br><span class="line">  .dataframe, .warn &#123;</span><br><span class="line">    border-collapse:collapse;</span><br><span class="line">    border: 1px solid black;</span><br><span class="line">    text-align: center;</span><br><span class="line">  &#125;</span><br><span class="line">  th &#123;</span><br><span class="line">    background-color: #6cc635;</span><br><span class="line">    color:white;</span><br><span class="line">    padding: 0 5px 0 5px;</span><br><span class="line">    text-align: center;</span><br><span class="line">  &#125;</span><br><span class="line">  td &#123;</span><br><span class="line">    text-align: center;</span><br><span class="line">    padding: 0 5px 0 5px;</span><br><span class="line">  &#125;</span><br><span class="line">  .hidden &#123;</span><br><span class="line">    display: none;</span><br><span class="line">  &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line"></span><br><span class="line">def getLatestWed(): 	# 查询最近的周三</span><br><span class="line">	today = datetime.date.today() </span><br><span class="line">	for i in range(0,7):</span><br><span class="line">		days = datetime.timedelta(days = i)</span><br><span class="line">		theDay = today - days</span><br><span class="line">		if theDay.weekday() == 2:</span><br><span class="line">			Wed = theDay </span><br><span class="line">	return Wed</span><br><span class="line"></span><br><span class="line">def getThu():		# 查询周四</span><br><span class="line">	Wed = getLatestWed()</span><br><span class="line">	sixDays = datetime.timedelta(days = 6)</span><br><span class="line">	Thu = Wed - sixDays</span><br><span class="line">	return Thu</span><br><span class="line"></span><br><span class="line">intro = &apos;&apos;&apos;&lt;div&gt;&lt;span&gt;&lt;/span&gt;Hi all&lt;/div&gt;</span><br><span class="line">&lt;div&gt;内广周报如下：&lt;/div&gt;</span><br><span class="line">&lt;div&gt;一、各业务线在重点广告位投放点击率（数据周期：%s-%s）：&lt;/div&gt;&apos;&apos;&apos; % (getThu().strftime(&apos;%-m月%-d日&apos;), getLatestWed().strftime(&apos;%-m月%-d日&apos;))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def findCsvInfolder():</span><br><span class="line">	filename = &apos;内广周任务_%s_%s.csv&apos; % (getThu().strftime(&apos;%Y%m%d&apos;), getLatestWed().strftime(&apos;%Y%m%d&apos;))</span><br><span class="line">	try:</span><br><span class="line">		CSV = pd.read_csv(&apos;/Users/TracyW/Downloads/%s&apos; % filename, encoding=&apos;utf8&apos;)</span><br><span class="line">	except:</span><br><span class="line">		input(&apos;！未找到文件【%s】，请检查是否下载成功了。敲击回车重新读取文件...&apos; % filename )</span><br><span class="line">		findCsvInfolder()</span><br><span class="line">	return CSV</span><br><span class="line"></span><br><span class="line">def readTable(): # 读取原始表，更新列名，去除非统计项</span><br><span class="line">	rawTable = findCsvInfolder()</span><br><span class="line">	rawTable.columns = [&apos;biz_line_id&apos;,&apos;ad_type_id&apos;,&apos;exp&apos;,&apos;trueview&apos;,&apos;click&apos;]</span><br><span class="line">	rawTable[&apos;biz_line&apos;] = &apos;unname&apos;</span><br><span class="line">	rawTable[&apos;ad_type&apos;] = &apos;unname&apos;</span><br><span class="line"></span><br><span class="line">	for i in rawTable.index:</span><br><span class="line">		biz_id = rawTable.loc[i, &apos;biz_line_id&apos;]</span><br><span class="line">		type_id = rawTable.loc[i, &apos;ad_type_id&apos;]</span><br><span class="line">		if biz_id in dict_biz_line.keys():</span><br><span class="line">			rawTable.loc[i, &apos;biz_line&apos;] = dict_biz_line[biz_id]</span><br><span class="line">		if type_id in dict_ad_type.keys():</span><br><span class="line">			rawTable.loc[i, &apos;ad_type&apos;] = dict_ad_type[type_id]</span><br><span class="line"></span><br><span class="line">	rawTable = rawTable[(rawTable.biz_line != &apos;unname&apos;) &amp; (rawTable.ad_type != &apos;unname&apos;)]	# 去除非白名单位置</span><br><span class="line">	rawTable = rawTable[rawTable.exp != 0]	# 去除延迟导致的有点击或trueview但无曝光的位置</span><br><span class="line"></span><br><span class="line">	indx = rawTable[(rawTable.ad_type_id == 2701) &amp; (rawTable.trueview == 0)].index	# 找到乐活视频中trueview为0的项</span><br><span class="line">	rawTable = rawTable.drop(indx)</span><br><span class="line">	######### 测试无数据列</span><br><span class="line">	# rawTable = rawTable.drop(19)     </span><br><span class="line">	#########</span><br><span class="line">	return rawTable</span><br><span class="line"></span><br><span class="line">def pivotTable(): # 透视图</span><br><span class="line">	print(&apos;- 正在搞数&apos;)</span><br><span class="line">	table = readTable()</span><br><span class="line">	table[&apos;CTRorVTR&apos;] = table.click / table.exp</span><br><span class="line"></span><br><span class="line">	for i in table.index:	 # 计算乐活信息流视频的VTR</span><br><span class="line">		if table.loc[i,&apos;ad_type_id&apos;] == 2701:</span><br><span class="line">			if table.loc[i, &apos;trueview&apos;] != 0:</span><br><span class="line">				table.loc[i, &apos;CTRorVTR&apos;] = table.loc[i, &apos;trueview&apos;] / table.loc[i, &apos;exp&apos;]</span><br><span class="line">			else:</span><br><span class="line">				table.loc[i, &apos;CTRorVTR&apos;] = np.nan</span><br><span class="line"></span><br><span class="line">	pivot_table = pd.pivot_table(table,index=[&apos;biz_line&apos;],columns = [&apos;ad_type&apos;], values=[&apos;CTRorVTR&apos;], fill_value = &apos;&apos;)</span><br><span class="line">	return pivot_table.CTRorVTR</span><br><span class="line"></span><br><span class="line">def addMean():	# append the mean row</span><br><span class="line">	meanTable = readTable()</span><br><span class="line">	meanTable = pd.pivot_table(meanTable, index = &apos;ad_type&apos;, values = [&apos;click&apos;,&apos;trueview&apos;, &apos;exp&apos;])</span><br><span class="line">	meanTable[&apos;均值&apos;] = meanTable.click / meanTable.exp </span><br><span class="line">	meanTable.loc[&apos;广告类型5（VTR）&apos;,&apos;均值&apos;] = meanTable.loc[&apos;广告类型5（VTR）&apos;,&apos;trueview&apos;] / meanTable.loc[&apos;广告类型5（VTR）&apos;,&apos;exp&apos;]</span><br><span class="line">	series = meanTable[&apos;均值&apos;]</span><br><span class="line">	# append到透视图</span><br><span class="line">	basicTable = pivotTable()</span><br><span class="line">	table = basicTable.append(series)</span><br><span class="line">	return table</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def convert2percent(): # convert float to percent type</span><br><span class="line">	table = addMean()</span><br><span class="line">	for i in range(0,len(table.index)):</span><br><span class="line">		for j in range(0,len(table.columns)):</span><br><span class="line">			s =  table.iloc[i,j]</span><br><span class="line">			if s:</span><br><span class="line">				table.iloc[i,j] = &apos;%.2f%%&apos; % (s*100)</span><br><span class="line">	return table</span><br><span class="line"></span><br><span class="line">def addWarn(): # 潜在异常数据的提醒</span><br><span class="line">	table = readTable()</span><br><span class="line">	percentTable = convert2percent()</span><br><span class="line">	</span><br><span class="line">	print(&apos;- 正在检查异常数据&apos;)</span><br><span class="line">	</span><br><span class="line">	# 查看各个业务线上的广告类型的曝光量，低于100的做置灰标记</span><br><span class="line">	lowExpDf = table[table.exp &lt;= 100][[&apos;biz_line&apos;,&apos;ad_type&apos;]]</span><br><span class="line">	COUNT = int(lowExpDf.count().mean())</span><br><span class="line">	</span><br><span class="line">	for i in range(0,COUNT):</span><br><span class="line">		biz_line = lowExpDf.iloc[i,0]</span><br><span class="line">		ad_type = lowExpDf.iloc[i,1]</span><br><span class="line">		value = percentTable.loc[biz_line, ad_type]</span><br><span class="line">		percentTable.loc[biz_line, ad_type] = &quot;gray%s&quot; % value</span><br><span class="line"></span><br><span class="line">	# 查看各个广告类型（groupby）的曝光，低于100的做置灰标记</span><br><span class="line">	if COUNT:</span><br><span class="line">		gbAdtypeTable = table.groupby(&apos;ad_type&apos;).sum()</span><br><span class="line">		lowExpDf_gb_adtype= gbAdtypeTable[gbAdtypeTable.exp &lt; 100]</span><br><span class="line">		COUNT1 = int(lowExpDf_gb_adtype.count().mean())</span><br><span class="line">		if COUNT1:</span><br><span class="line">			ad_types = lowExpDf_gb_adtype.index</span><br><span class="line">			for ad_type in ad_types:</span><br><span class="line">				value = percentTable.loc[&apos;均值&apos;, ad_type]</span><br><span class="line">				percentTable.loc[&quot;均值&quot;, ad_type] = &quot;gray%s&quot; % value			</span><br><span class="line">	return percentTable</span><br><span class="line"></span><br><span class="line">def getHtml():</span><br><span class="line">	table = addWarn()</span><br><span class="line">	print(&apos;- 正在生成html&apos;)</span><br><span class="line">	table.to_html(&apos;/Users/TracyW/Downloads/CTRorVTRtable.html&apos;)	# 将透视表存为html</span><br><span class="line">	f = codecs.open(&apos;/Users/TracyW/Downloads/CTRorVTRtable.html&apos;,&apos;r&apos;)</span><br><span class="line">	html = f.read()</span><br><span class="line"></span><br><span class="line">	# 强行用正则植入class hidden</span><br><span class="line">	hidden = &quot;class = &apos;hidden&apos;&quot;</span><br><span class="line">	originalBizrrow = &apos;&lt;tr&gt;\n      &lt;th&gt;biz_line&lt;/th&gt;&apos;</span><br><span class="line">	css_row_biz = &apos;&lt;tr %s&gt;\n      &lt;th&gt;biz_line&lt;/th&gt;&apos; % hidden</span><br><span class="line">	</span><br><span class="line">	html = re.sub(originalBizrrow,css_row_biz,html,re.S)</span><br><span class="line">	html = re.sub(&apos;ad_type&apos;,&apos;业务线/广告类型&apos;,html)</span><br><span class="line">	html = re.sub(&apos;&lt;td&gt;gray&apos;, &quot;&lt;td style=&apos;color:gray&apos;&gt;&quot;,html) # 置灰曝光量不足100的项</span><br><span class="line"></span><br><span class="line">	GRAY = re.findall(&apos;gray&apos;, html)</span><br><span class="line">	if GRAY:</span><br><span class="line">		html += &apos;&lt;div&gt;*灰色字体处曝光量不足100，点击率可能存在偏差&lt;/div&gt;&apos;</span><br><span class="line">	return html</span><br><span class="line"></span><br><span class="line">def init():</span><br><span class="line">	print(&apos;【初始化程序】&apos;)</span><br><span class="line">	init = input(&apos;- 大锤棒不棒：&apos;)</span><br><span class="line">	if init not in [&apos;棒棒哒！&apos;, &apos;棒！&apos;, &apos;超级棒！&apos;, &apos;特别棒！&apos;]:</span><br><span class="line">		exit();</span><br><span class="line">	else:</span><br><span class="line">		print(&apos;- 初始化成功...&apos;)</span><br><span class="line">		return 1</span><br><span class="line"></span><br><span class="line">def sendMail():</span><br><span class="line">	def Connect():</span><br><span class="line">		msg = MIMEText(&apos;&lt;html&gt;&lt;head&gt;&apos;+ css + &apos;&lt;/head&gt;&lt;body&gt;&apos; + intro + tableHtml + &apos;&lt;/body&gt;&lt;/html&gt;&apos;, &apos;html&apos;, &apos;utf-8&apos;)</span><br><span class="line">		msg[&apos;Subject&apos;] = &apos;内广周报&apos;</span><br><span class="line">		FROM = &apos;&lt;tracywang@qiyi.com&gt;&apos;</span><br><span class="line">		TO = [&apos;tracywang@qiyi.com&apos;]</span><br><span class="line">		msg[&apos;From&apos;] = &apos;王垂怡&lt;tracywang@qiyi.com&gt;&apos;</span><br><span class="line">		msg[&apos;TO&apos;] = &apos;tracywang@qiyi.com&apos;  #单发</span><br><span class="line"></span><br><span class="line">		try:</span><br><span class="line">			passwd = getpass.getpass(&apos;	请输入邮箱%s的密码：&apos; % FROM)</span><br><span class="line">			print (&apos;- 正在发送邮件...&apos;)</span><br><span class="line">			smtp = smtplib.SMTP()    </span><br><span class="line">			smtp.connect(&quot;mail.iqiyi.com&quot;, &quot;25&quot;)</span><br><span class="line">			smtp.login(&apos;tracywang&apos;, passwd)</span><br><span class="line">			smtp.sendmail(FROM, TO, msg.as_string())</span><br><span class="line">			smtp.quit()</span><br><span class="line">			print(&apos;- 邮件发送成功~&apos;)</span><br><span class="line">		except Exception as e:</span><br><span class="line">			if str(e) == &quot;(535, b&apos;5.7.3 Authentication unsuccessful&apos;)&quot;:</span><br><span class="line">				print(&apos;！密码错误，请重新输入&apos;)</span><br><span class="line">				Connect()</span><br><span class="line">			else:</span><br><span class="line">				print((&apos;邮件发送失败：&apos;+str(e)))</span><br><span class="line">	if init() == 1:</span><br><span class="line">		print(&apos;\n【搞数据！】&apos;)</span><br><span class="line">		start_time1 = time.time()</span><br><span class="line">		tableHtml = getHtml()</span><br><span class="line">		end_time1 = time.time()</span><br><span class="line">		time_gap1 = end_time1 - start_time1</span><br><span class="line">		print(&apos;【用时%.2f秒】\n&apos; % time_gap1)</span><br><span class="line"></span><br><span class="line">		print(&apos;\n【发邮件！】&apos;)</span><br><span class="line">		start_time2 = time.time()</span><br><span class="line">		print(&apos;- 开始发送邮件&apos;)</span><br><span class="line">		Connect()</span><br><span class="line">		end_time2 = time.time()</span><br><span class="line">		time_gap2 = end_time2 - start_time2</span><br><span class="line">		print(&apos;【用时%.2f秒】&apos; % time_gap2)</span><br><span class="line"></span><br><span class="line">		time_gap = end_time2 - start_time1</span><br><span class="line">		print (&apos;\n\n(•ө•)♡ 总用时%.2f秒，大锤真是太棒了!&apos; % time_gap)</span><br><span class="line">		input(&apos;\n敲击回车退出程序...&apos;)</span><br><span class="line">	else:</span><br><span class="line">		exit()</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">	sendMail()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/27/1101010100/" rel="next" title="1101010100">
+                <i class="fa fa-chevron-left"></i> 1101010100
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://o6qjyk8rv.bkt.clouddn.com/%E5%B0%8F%E8%8D%89%E5%AE%9D.jpeg"
+               alt="Tracy" />
+          <p class="site-author-name" itemprop="name">Tracy</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">29</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="http://chuiyi.wang/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/wang-chui-yi-43" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-question-circle"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/63432100/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行效果"><span class="nav-number">1.</span> <span class="nav-text">运行效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#终端："><span class="nav-number">1.1.</span> <span class="nav-text">终端：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#邮件："><span class="nav-number">1.2.</span> <span class="nav-text">邮件：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一点点感想"><span class="nav-number">2.</span> <span class="nav-text">一点点感想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先做到“正确”"><span class="nav-number">2.1.</span> <span class="nav-text">先做到“正确”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再做到“易用”"><span class="nav-number">2.2.</span> <span class="nav-text">再做到“易用”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后还要“能看”"><span class="nav-number">2.3.</span> <span class="nav-text">最后还要“能看”</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一段不成熟的小代码"><span class="nav-number">3.</span> <span class="nav-text">一段不成熟的小代码</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tracy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
